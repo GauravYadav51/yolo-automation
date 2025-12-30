@@ -1,0 +1,21 @@
+# ------------------------------------------------------------------
+#                Dataset Configuration File for YOLOv8
+# ------------------------------------------------------------------
+
+# Path to the root directory of your prepared dataset
+path: D:/Production/NEU-DET
+
+# Define the paths for training and validation image directories
+# These are relative to the 'path' above
+train: D:\Production\NEU-DET\train\images
+val: D:\Production\NEU-DET\validation\images
+
+# --- Class names ---
+# The names must be in the correct order of their class_id
+names:
+  0: crazing
+  1: inclusion
+  2: patches
+  3: pitted_surface
+  4: rolled-in_scale
+  5: scratches

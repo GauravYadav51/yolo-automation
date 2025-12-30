@@ -1,0 +1,10 @@
+# Ignore YOLO training outputs
+runs/
+yolov5/runs/
+*.pt
+*.onnx
+
+# Ignore system files
+__pycache__/
+.DS_Store
+.vscode/
