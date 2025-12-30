@@ -1,0 +1,24 @@
+name: Train NEU Defect Detector
+on: [push]
+
+jobs:
+  yolo-train:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Run YOLO Training
+        run: |
+          echo "Starting Training using train_yolo.py..."
+          
+          # We just call the python executable and the script. 
+          # No extra arguments needed because they are inside the file!
+          & "C:\Users\Test\anaconda3\envs\production\python.exe" train_yolo.py
+
+      - name: Upload Best Model
+        uses: actions/upload-artifact@v4
+        with:
+          name: best-defect-model
+          # UPDATED PATH: Matches the 'name=' parameter in your Python script
+          path: runs/detect/NEU_defect_model_v1/weights/best.pt
